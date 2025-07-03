@@ -14,11 +14,13 @@ const CreateUser = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios.post('http://localhost:3001/createUser',{name,email,age})
-    .then(result=>{console.log(result)
+    .then(result=>{
+      
+      console.log(result)
       navigate('/')
     })
-    .catch(err=>console.log(err))
-
+    .catch(err => console.log(err))
+    
   }
 
   return (

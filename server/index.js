@@ -8,8 +8,20 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
+//require('dotenv').config(); 
 
-mongoose.connect("mongodb://127.0.0.1:27017/crud");
+
+
+mongoose.connect("mongodb+srv://crud:admin@cluster0.h0j0uib.mongodb.net/crud")
+  .then(() => console.log("Connected to MongoDB"))
+  .catch((err) => console.log("MongoDB Connection Error:", err));
+
+  //mongodb+srv://crud:crud12345@cluster0.fxetcty.mongodb.net/crud?retryWrites=true&w=majority
+//mongoose.connect("mongodb+srv://crud:crud12345@cluster0.fxetcty.mongodb.net");
+//mongodb://127.0.0.1:27017/crud
+
+
+
 
 
 app.get("/", (req,res)=>{
